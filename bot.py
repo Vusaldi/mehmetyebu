@@ -71,17 +71,17 @@ rxyzdev_initT = {}
 
 @client.on(events.NewMessage(pattern="^/start$"))
 async def info(event):
-  await event.reply("**Merhaba Benim Ve Sahibim Hakkında Bilgi\n\nPython: 3.8.2\nKütüphanem: Telethon\n\nSahibim:  Gruplarınızda Üyeleri Etiketlemek için Yaratılmışım**",
+  await event.reply("**Salam! Mənim Sahibim, Hakda Bilgilər :\n\nPython: 3.8.2\Kitabxanam 📗: Telethon\n\nSahibim:  Qruplarınızda Userlərivizi Etiketləmək Üçün Yaradəlmışam.**",
                     buttons=(
                       [
-                       Button.url('Beni Grubuna Ekle ➕', 'https://t.me/Startaggerbot?startgroup=a')
+                       Button.url('Məni Qrupa Əlavə Et➕', 'https://t.me/PremiumTaggerBot?startgroup=a')
                       ],
                       [
-                       Button.url('📢 Kanal', 'https://t.me/StarBotKanal'),
-                       Button.url('🇹🇷 Sahibim', 'https://t.me/Hayiboo')
+                       Button.url('📢 Kanal', 'https://t.me/NyzmiBotlarim'),
+                       Button.url('🥷 Developer', 'https://t.me/BirKapitan')
                       ],
                       [
-                       Button.url('🧑🏻‍💻 ɢɪᴛʜᴜʙ ᴋᴀʏɴᴀᴋ ᴋᴏᴅᴜ 🧑🏻‍💻', 'https://github.com/MehmetAtes21/Tagger')
+                       Button.url('My Blog Channel 🇦🇿', 'https://t.me/VusalinBlogu')
                       ],
                     ),
                     link_preview=False
@@ -100,36 +100,36 @@ async def start(event):
   if event.is_private:
     async for usr in client.iter_participants(event.chat_id):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
-     await client.send_message(-1001752620477, f"ℹ️ **Yeni Kullanıcı -** {ad}")
+     await client.send_message(-1001752620477, f"ℹ️ **Yeni İsdifadəçi -** {ad}")
      return await event.reply(f"**Merhaba \nGrubunuzdakı Üyeleri Etiketleye Bilirim\nKomutlar için Komutlar Düğmesine Tıklaya Bilirsiz**", buttons=(
                       [
                        Button.inline("Komutlar", data="komutlar")
                       ],
                       [
-                       Button.url('Beni Grubuna Ekle', 'https://t.me/StartaggerBot?startgroup=a'),
-                       Button.url('Kanal', 'https://t.me/StarBotKanal')
+                       Button.url('➕ Məni Qrupa Əlavə et ➕', 'https://t.me/StartaggerBot?startgroup=a'),
+                       Button.url('Kanal 📣', 'https://t.me/NyzmiBotlarim')
                       ],
                       [
-                       Button.url('Sahibim', 'https://t.me/Hayiboo')
+                       Button.url('🥷 Developer', 'https://t.me/BirKapitan')
                       ],
                     ),
                     link_preview=False)
 
 
   if event.is_group:
-    return await client.send_message(event.chat_id, f"**Beni Grubuna Aldığın için Teşekkürler ✨**")
+    return await client.send_message(event.chat_id, f"**Məni Qrupa Əlavə Etdiyiniz Üçün Təşəkkür!✨**")
 
 # Başlanğıc Button
 @client.on(events.callbackquery.CallbackQuery(data="start"))
 async def handler(event):
     async for usr in client.iter_participants(event.chat_id):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
-     await event.edit(f"**Merhaba Ben @MinaTagBot\nGrubunuzdakı Üyeleri Etiketleye Bilirim\nKomutlar için Komutlar Düğmesine Tıklaya Bilirsiz**", buttons=(
+     await event.edit(f"**Salam Mən @PremuiumTaggerBot\n Mən Qurupunuzdaki Bütün Userləri etiketliyə bilərəm!\nKomandolar üçün komandolar düyməsinə basa bilərsiniz!**", buttons=(
                       [
-                       Button.inline("Komutlar", data="komutlar")
+                       Button.inline("Komandolar", data="komutlar")
                       ],
                       [
-                       Button.url('Beni Grubuna Ekle', 'https://t.me/StartaggerBot?startgroup=a'),
+                       Button.url('➕ Məni Qrupa Əlavə et ➕', 'https://t.me/Premuium?startgroup=a'),
                        Button.url('Kanal', 'https://t.me/StarBotKanal')
                       ],
                       [
