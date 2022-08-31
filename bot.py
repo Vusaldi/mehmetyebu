@@ -46,10 +46,10 @@ bot_token = os.environ.get("TOKEN")
 DATABASE_URL = os.environ.get("DATABASE_URL") # MongoDB veritabanınızın url'si. Nasıl alacağınızı bilmiyorsanız destek grubu @RepoHaneX'e gelin.
 BOT_USERNAME = os.environ.get("BOT_USERNAME") # Botunuzun kullanıcı adı.
 LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL")) # Botunuzun eylemleri kaydedeceği kayıt grubunun id'si.
-GROUP_SUPPORT = os.environ.get("GROUP_SUPPORT", "SohbetGoVip") # Botunuzdan yasaklanan kullanıcıların itiraz işlemleri için başvuracağı grup, kanal veya kullanıcı. Boş bırakırsanız otomatik olarak OWNER_ID kimliğine yönlendirecektir.
+GROUP_SUPPORT = os.environ.get("GROUP_SUPPORT", "unf_sohbet") # Botunuzdan yasaklanan kullanıcıların itiraz işlemleri için başvuracağı grup, kanal veya kullanıcı. Boş bırakırsanız otomatik olarak OWNER_ID kimliğine yönlendirecektir.
 GONDERME_TURU = os.environ.get("GONDERME_TURU", False) # Botunuzun yanıtladığınız mesajı gönderme türü. Eğer direkt iletmek isterseniz False, kopyasını göndermek isterseniz True olarak ayarlayın.
 OWNER_ID = int(os.environ.get("OWNER_ID")) # Sahip hesabın id'si
-LANGAUGE = os.environ.get("LANGAUGE", "TR")
+LANGAUGE = os.environ.get("LANGAUGE", "AZ")
 
 client = TelegramClient('client', api_id, api_hash).start(bot_token=bot_token)
 
@@ -61,7 +61,7 @@ app = Client("GUNC",
 
 anlik_calisan = []
 
-ozel_list = [5105453716]
+ozel_list = [5387158067]
 anlik_calisan = []
 grup_sayi = []
 etiketuye = []
@@ -92,7 +92,7 @@ async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
   
-  if event.chat_id in rxyzdev_tagTot:await event.respond(f"❌**Etiket işlemi durduruldu.\n\n Etiketlerin Sayı: {rxyzdev_tagTot[event.chat_id]}**")
+  if event.chat_id in rxyzdev_tagTot:await event.respond(f"❌**Etiket prossesi durduruldu.\n\n Etiketləmənin Sayı: {rxyzdev_tagTot[event.chat_id]}**")
 
 
 @client.on(events.NewMessage(pattern="^/start$"))
@@ -100,13 +100,13 @@ async def start(event):
   if event.is_private:
     async for usr in client.iter_participants(event.chat_id):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
-     await client.send_message(-1001752620477, f"ℹ️ **Yeni İsdifadəçi -** {ad}")
+     await client.send_message(-1001640421463, f"ℹ️ **Yeni İsdifadəçi -** {ad}")
      return await event.reply(f"**Merhaba \nGrubunuzdakı Üyeleri Etiketleye Bilirim\nKomutlar için Komutlar Düğmesine Tıklaya Bilirsiz**", buttons=(
                       [
                        Button.inline("Komutlar", data="komutlar")
                       ],
                       [
-                       Button.url('➕ Məni Qrupa Əlavə et ➕', 'https://t.me/StartaggerBot?startgroup=a'),
+                       Button.url('➕ Məni Qrupa Əlavə et ➕', 'https://t.me/PremiumTaggerBot?startgroup=a'),
                        Button.url('Kanal 📣', 'https://t.me/NyzmiBotlarim')
                       ],
                       [
@@ -129,11 +129,11 @@ async def handler(event):
                        Button.inline("Komandolar", data="komutlar")
                       ],
                       [
-                       Button.url('➕ Məni Qrupa Əlavə et ➕', 'https://t.me/Premuium?startgroup=a'),
+                       Button.url('➕ Məni Qrupa Əlavə et ➕', 'https://t.me/PremiumTaggerBot?startgroup=a'),
                        Button.url('Kanal', 'https://t.me/StarBotKanal')
                       ],
                       [
-                       Button.url('Sahibim', 'https://t.me/Hayiboo')
+                       Button.url('🥷 Dev.', 'https://t.me/BirKapitan')
                       ],
                     ),
                     link_preview=False)
